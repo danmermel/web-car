@@ -1,0 +1,12 @@
+#! /usr/bin/ruby
+require 'cgi'
+
+cgi = CGI.new
+
+input = cgi.params 
+trans = input['direction'].to_s
+puts trans
+command = "sudo ruby motor.rb direction=input['direction']}"
+puts command
+#exec(command)
+

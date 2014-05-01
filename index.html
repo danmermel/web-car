@@ -1,0 +1,63 @@
+<!doctype html>
+ 
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>Demo</title>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+</head>
+
+<body>
+
+    <a href="#" onclick="goLeft();">LEFT</a>
+
+    <a href="#" onclick="goRight();">RIGHT</a>
+
+
+
+    <script>
+
+ 
+
+      var goLeft = function() {
+
+        console.log("left");
+
+
+
+        $.ajax({
+
+          url: "handler.rb?direction=w",
+
+          type: "POST",
+
+          success: function(html){
+
+            console.log("Ajax returned "+html);
+
+          } 
+
+         });
+   }
+
+
+      var goRight = function() {
+
+        console.log("right");
+
+      }
+
+
+
+    </script>
+
+</body>
+
+</html>
