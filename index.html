@@ -28,15 +28,17 @@
 
       var goLeft = function() {
 
-        console.log("left");
+       console.log("left");
 
 
 
         $.ajax({
 
-          url: "handler.rb?direction=w",
+          url: "handler.rb",
 
           type: "POST",
+ 
+          data: "direction=lft", 
 
           success: function(html){
 
@@ -52,6 +54,21 @@
 
         console.log("right");
 
+        $.ajax({
+	
+          url: "handler.rb",
+
+          type: "POST",
+
+          data: "direction=rgt", 
+
+          success: function(html){
+
+          console.log("Ajax returned "+html);
+         
+         }
+
+        });
       }
 
 

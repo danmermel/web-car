@@ -1,8 +1,8 @@
 #! /usr/bin/ruby
 require 'cgi'
 
-#$stdout.reopen("output.txt", "w")
-#$stderr.reopen("errors.txt", "w")
+#$stdout.reopen("handler_out.txt", "w")
+#$stderr.reopen("handler_err.txt", "w")
 
 puts "here i am"
 cgi = CGI.new

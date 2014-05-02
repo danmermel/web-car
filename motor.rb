@@ -45,29 +45,29 @@ end
 
 
 
-   if direction == "[w]" then  #forward
+   if direction == "[fwd]" then  #forward
       # stop_all(io)
       # io.write(0,HIGH)
       # io.write(4,HIGH)
       puts "going forward"
    end
-   if direction == '[x]' then  # back
+   if direction == "[bck]" then  # back
       # stop_all(io)
       # io.write(3,HIGH)
       # io.write(1,HIGH)
       puts "going back"
    end
-   if direction == 'a' then #left
+   if direction == "[lft]" then #left
       # stop_all(io)
       # io.write(0,HIGH)
-      puts "going forward"
+      puts "going left"
    end           
-   if direction == 'd' then #right
+   if direction == "[rgt]" then #right
       # stop_all(io)
       # io.write(4,HIGH)
-      puts "going forward"
+      puts "going right"
    end  
 
-   stop_all(io) if direction == 's'
+   stop_all(io) if direction == "[stp]"
 
 puts "goodbye"
