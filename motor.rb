@@ -14,7 +14,7 @@ io = WiringPi::GPIO.new
 #input = cgi.params
 #puts input['direction'][0]
 
-puts "hellooo"
+#puts "hellooo"
 direction =  ARGV[0]
 puts direction
 
@@ -46,25 +46,25 @@ end
 
 
    if direction == "[fwd]" then  #forward
-      # stop_all(io)
-      # io.write(0,HIGH)
-      # io.write(4,HIGH)
+       stop_all(io)
+       io.write(0,HIGH)
+       io.write(4,HIGH)
       puts "going forward"
    end
    if direction == "[bck]" then  # back
-      # stop_all(io)
-      # io.write(3,HIGH)
-      # io.write(1,HIGH)
+       stop_all(io)
+       io.write(3,HIGH)
+       io.write(1,HIGH)
       puts "going back"
    end
    if direction == "[lft]" then #left
-      # stop_all(io)
-      # io.write(0,HIGH)
+       stop_all(io)
+       io.write(0,HIGH)
       puts "going left"
    end           
    if direction == "[rgt]" then #right
-      # stop_all(io)
-      # io.write(4,HIGH)
+       stop_all(io)
+       io.write(4,HIGH)
       puts "going right"
    end  
 

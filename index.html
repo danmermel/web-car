@@ -16,62 +16,75 @@
 
 <body>
 
-    <a href="#" onclick="goLeft();">LEFT</a>
-
-    <a href="#" onclick="goRight();">RIGHT</a>
-
+    <button onclick="goForward();">FORWARD</button>
+    <br>
+    <button onclick="goLeft();">LEFT</button>
+    <button onclick="stop();">STOP</button>
+    <button onclick="goRight();">RIGHT</button>
+    <br>
+    <button onclick="goBack();">BACK</button>
 
 
     <script>
 
- 
-
       var goLeft = function() {
-
        console.log("left");
-
-
-
-        $.ajax({
-
+       $.ajax({
           url: "handler.rb",
-
           type: "POST",
- 
           data: "direction=lft", 
-
           success: function(html){
-
             console.log("Ajax returned "+html);
-
           } 
-
          });
-   }
+     }
 
-
-      var goRight = function() {
-
-        console.log("right");
-
-        $.ajax({
-	
+     var goForward = function() {
+       console.log("Forward");
+       $.ajax({
           url: "handler.rb",
-
           type: "POST",
-
-          data: "direction=rgt", 
-
+          data: "direction=fwd", 
           success: function(html){
+            console.log("Ajax returned "+html);
+          } 
+         });
+     }
+     var goBack = function() {
+       console.log("Back");
+       $.ajax({
+          url: "handler.rb",
+          type: "POST",
+          data: "direction=bck", 
+          success: function(html){
+            console.log("Ajax returned "+html);
+          } 
+         });
+     }
 
-          console.log("Ajax returned "+html);
-         
-         }
-
-        });
+     var goRight = function() {
+        console.log("right");
+        $.ajax({
+          url: "handler.rb",
+          type: "POST",
+          data: "direction=rgt", 
+          success: function(html){
+             console.log("Ajax returned "+html);
+          }
+         });
       }
 
-
+      var stop = function() {
+       console.log("stop");
+       $.ajax({
+          url: "handler.rb",
+          type: "POST",
+          data: "direction=stp", 
+          success: function(html){
+            console.log("Ajax returned "+html);
+          } 
+         });
+     }
 
     </script>
 
