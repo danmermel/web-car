@@ -2,20 +2,17 @@
 
 require 'wiringpi'
 require 'io/console'
-#require 'cgi'
 
+
+# next two lines output messages and errors to a file, for debugging
 $stdout.reopen("moto_out.txt", "w")
 $stderr.reopen("moto_err.txt", "w")
 
 
 
 io = WiringPi::GPIO.new
-#cgi = CGI.new
-#input = cgi.params
-#puts input['direction'][0]
 
-#puts "hellooo"
-direction =  ARGV[0]
+direction =  ARGV[0]   # get the instruction for direction
 puts direction
 
 # 0 = right fwd
@@ -25,7 +22,7 @@ puts direction
 
 puts "turning on"
 
-begin
+begin    # set the pins to OUT
    io.mode(0,OUTPUT)
    io.mode(1,OUTPUT)
    io.mode(3,OUTPUT)
